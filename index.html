@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Katalog Birthday T-Shirt JKT48</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --red: #cc0000;
+      --dark-red: #990000;
+      --black: #111;
+      --white: #fff;
+      --bg: #f4f7fb;
+      --card-shadow: 0 8px 30px rgba(0,0,0,0.10);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: #333; font-family: 'Nunito', Arial, sans-serif; }
+
+    .topbar {
+      background: var(--black);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 24px;
+      font-size: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    .topbar .brand { font-family: 'Bebas Neue', sans-serif; letter-spacing: 3px; color: var(--red); font-size: 22px; }
+    .cart-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red);
+      color: white;
+      border: none;
+      padding: 9px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: 'Nunito', sans-serif;
+      transition: background 0.2s;
+    }
+    .cart-btn:hover { background: var(--dark-red); }
+    .cart-badge {
+      background: white;
+      color: var(--red);
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      font-size: 12px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+    }
+    .cart-badge.bump { transform: scale(1.4); }
+
+    .header-merchandise {
+      position: relative;
+      background: var(--red);
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      height: 400px;
+    }
+    .header-merchandise .banner-img {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      display: block; opacity: 0.45;
+    }
+    .header-merchandise .overlay-text {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center; width: 100%; padding: 0 20px;
+    }
+    .header-merchandise .overlay-text h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 60px; letter-spacing: 6px;
+      text-shadow: 2px 3px 8px rgba(0,0,0,0.7); margin-bottom: 8px;
+    }
+    .header-merchandise .overlay-text p {
+      font-size: 18px; letter-spacing: 3px; font-weight: 700;
+      text-shadow: 1px 2px 5px rgba(0,0,0,0.6);
+    }
+
+    .product-summary {
+      background: white;
+      border-bottom: 2px solid #f0f0f0;
+      padding: 16px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .summary-title { font-size: 13px; color: #999; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .summary-cards { display: flex; gap: 12px; flex-wrap: wrap; }
+    .sum-card {
+      display: flex; align-items: center; gap: 10px;
+      background: #fff5f5; border: 1px solid #ffd0d0; border-radius: 10px; padding: 10px 16px;
+    }
+    .sum-card i { color: var(--red); font-size: 22px; }
+    .sum-card .sc-label { font-size: 13px; font-weight: 700; color: #333; }
+    .sum-card .sc-sub { font-size: 11px; color: #999; }
+
+    .section-header {
+      max-width: 1200px; margin: 30px auto 0; padding: 0 20px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-header i { color: var(--red); font-size: 24px; }
+    .section-header h2 { font-size: 22px; font-weight: 800; color: var(--red); font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; }
+    .section-divider {
+      max-width: 1200px; margin: 8px auto 0; padding: 0 20px;
+      height: 3px; background: linear-gradient(to right, var(--red) 30%, transparent); border-radius: 2px;
+    }
+
+    .container {
+      max-width: 1200px; margin: 20px auto 40px; padding: 0 20px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;
+    }
+    .card {
+      background: white; border-radius: 16px; overflow: hidden;
+      box-shadow: var(--card-shadow); transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,0.15); }
+    .card img { width: 65%; height: 250px; object-fit: cover; display: block; }
+    .content { padding: 20px; }
+    .content h2 { color: #0078D7; margin-bottom: 6px; font-size: 17px; font-weight: 800; }
+    .content p { line-height: 1.6; margin-bottom: 12px; font-size: 14px; color: #555; }
+    .price { color: #1a7a1a; font-size: 22px; font-weight: 800; margin-bottom: 14px; }
+    .card-actions { display: flex; gap: 10px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 18px; background: var(--red); color: white;
+      text-decoration: none; border-radius: 8px; transition: background 0.2s;
+      border: none; cursor: pointer; font-size: 14px; font-weight: 700; font-family: 'Nunito', sans-serif;
+    }
+    .btn:hover { background: var(--dark-red); }
+    .btn-cart {
+      background: white; color: var(--red); border: 2px solid var(--red);
+      padding: 10px 14px; border-radius: 8px; cursor: pointer;
+      display: inline-flex; align-items: center; font-size: 18px;
+      transition: background 0.2s, transform 0.15s;
+      font-family: 'Nunito', sans-serif;
+    }
+    .btn-cart:hover { background: #fff0f0; }
+    .btn-cart.added { background: var(--red); color: white; transform: scale(1.1); }
+
+    #toast {
+      position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(80px);
+      background: #222; color: white; padding: 14px 28px; border-radius: 50px;
+      font-size: 15px; font-weight: 700; z-index: 9999;
+      display: flex; align-items: center; gap: 10px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      transition: transform 0.35s cubic-bezier(.34,1.56,.64,1), opacity 0.3s;
+      opacity: 0; pointer-events: none;
+    }
+    #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+    #toast i { color: #4cff91; font-size: 20px; }
+
+    .cart-overlay {
+      display: none;
+      position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 300;
+      backdrop-filter: blur(2px);
+    }
+    .cart-overlay.open { display: block; }
+    .cart-sidebar {
+      position: fixed; right: -420px; top: 0; bottom: 0; width: 400px;
+      background: white; z-index: 400; box-shadow: -8px 0 40px rgba(0,0,0,0.18);
+      display: flex; flex-direction: column;
+      transition: right 0.38s cubic-bezier(.4,0,.2,1);
+    }
+    .cart-sidebar.open { right: 0; }
+
+    .cart-header {
+      background: var(--red); color: white; padding: 20px 22px;
+      display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;
+    }
+    .cart-header h3 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 2px; }
+    .cart-close {
+      background: rgba(255,255,255,0.2); border: none; color: white;
+      width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
+      font-size: 20px; display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .cart-close:hover { background: rgba(255,255,255,0.35); }
+
+    .cart-items { flex: 1; overflow-y: auto; padding: 16px; }
+    .cart-empty {
+      text-align: center; padding: 60px 20px; color: #bbb;
+    }
+    .cart-empty i { font-size: 60px; margin-bottom: 16px; display: block; }
+    .cart-empty p { font-size: 16px; font-weight: 700; }
+
+    .cart-item {
+      display: flex; gap: 14px; align-items: center;
+      background: #fafafa; border-radius: 12px; padding: 12px; margin-bottom: 12px;
+      border: 1px solid #f0f0f0; animation: slideIn 0.3s ease;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .cart-item img { width: 64px; height: 64px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
+    .cart-item-info { flex: 1; min-width: 0; }
+    .cart-item-name { font-weight: 800; font-size: 13px; color: #222; margin-bottom: 3px; line-height: 1.3; }
+    .cart-item-price { color: #1a7a1a; font-weight: 700; font-size: 14px; }
+    .cart-item-controls {
+      display: flex; align-items: center; gap: 8px; margin-top: 8px;
+    }
+    .qty-btn {
+      width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--red);
+      background: white; color: var(--red); font-size: 16px; font-weight: 800;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s, color 0.15s; line-height: 1; font-family: 'Nunito', sans-serif;
+    }
+    .qty-btn:hover { background: var(--red); color: white; }
+    .qty-display { font-weight: 800; font-size: 15px; min-width: 24px; text-align: center; }
+    .remove-btn {
+      background: none; border: none; cursor: pointer; color: #ccc;
+      font-size: 18px; margin-left: auto; padding: 4px;
+      transition: color 0.2s;
+      display: flex; align-items: center;
+    }
+    .remove-btn:hover { color: var(--red); }
+
+    .cart-footer {
+      padding: 16px 20px; border-top: 2px solid #f0f0f0; flex-shrink: 0;
+      background: white;
+    }
+    .cart-subtotal {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 6px; font-size: 13px; color: #888;
+    }
+    .cart-total {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 16px;
+    }
+    .cart-total span:first-child { font-size: 16px; font-weight: 800; color: #222; }
+    .cart-total .total-price { font-size: 22px; font-weight: 800; color: var(--red); }
+    .free-shipping-note {
+      font-size: 12px; color: #888; text-align: center; margin-bottom: 12px;
+      background: #f0fff4; border: 1px solid #b7f0c8; border-radius: 8px;
+      padding: 7px 12px; font-weight: 600;
+    }
+    .free-shipping-note.active { color: #1a7a1a; }
+    .checkout-btn {
+      width: 100%; padding: 15px; background: var(--red); color: white;
+      border: none; border-radius: 12px; font-size: 17px; font-weight: 800;
+      cursor: pointer; font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    
+    .clear-cart-btn:hover { color: var(--red); }
+
+    footer {
+      background: #222; color: white; text-align: center; padding: 24px 20px; margin-top: 20px;
+      font-size: 14px; line-height: 1.9; font-weight: 600;
+    }
+
+    @media (max-width: 480px) {
+      .cart-sidebar { width: 100%; right: -100%; }
+      .cart-sidebar.open { right: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  
+
+  <div class="topbar">
+    <span class="brand">JKT48 STORE</span>
+    <button class="cart-btn" onclick="openCart()">
+      <i class="ti ti-shopping-cart" style="font-size:18px"></i>
+      Keranjang
+      <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+  </div>
+
+  <header class="header-merchandise">
+    <img class="banner-img" src="memberr.jpg" alt="JKT48 Banner" />
+    <div class="overlay-text">
+      <h1>JKT48 MERCHANDISE</h1>
+      <p>Official Birthday Collection</p>
+    </div>
+  </header>
+
+  <div class="product-summary">
+    <div class="summary-title">Koleksi Tersedia</div>
+    <div class="summary-cards">
+      <div class="sum-card"><i class="ti ti-shirt"></i><div><div class="sc-label">9 Produk</div><div class="sc-sub">Birthday T-Shirt</div></div></div>
+      <div class="sum-card"><i class="ti ti-tag"></i><div><div class="sc-label">Rp250.000</div><div class="sc-sub">Harga per item</div></div></div>
+      <div class="sum-card"><i class="ti ti-shield-check"></i><div><div class="sc-label">Official</div><div class="sc-sub">Produk resmi</div></div></div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <i class="ti ti-star-filled"></i>
+    <h2>Birthday T-Shirt Collection</h2>
+  </div>
+  <div class="section-divider"></div>
+
+  <section class="container">
+
+    <div class="card">
+      <img src="reva jkt48.jpg" alt="Adel JKT48">
+      <div class="content">
+        <h2>Reva Fidela Adel Pantjoro</h2>
+        <p>Adel JKT48 Generasi 8. 14 07 2006. Kaos dengan desain unik dan menarik bergambar anggota JKT48.</p>
+        <div class="price">Rp250.000</div>
+        <div class="card-actions">
+          <a href="pesan.t-shirt.adeljkt48.html" class="btn"><i class="ti ti-shopping-bag" style="font-size:15px"></i> PESAN</a>
+          <button class="btn-cart" onclick="addToCart(this, 'Reva Fidela Adel Pantjoro', 250000, 'reva jkt48.jpg')"><i class="ti ti-shopping-cart"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="Kathrina JKT48.jpg" alt="Kathrina JKT48">
+      <div class="content">
+        <h2>Kathrina Irene Indarto Putri</h2>
+        <p>Kathrina JKT48 Generasi 9. 26 07 2006. Kaos dengan desain unik dan menarik bergambar anggota JKT48.</p>
+        <div class="price">Rp250.000</div>
+        <div class="card-actions">
+          <a href="pesan.t-shirt.atinjkt48.html" class="btn"><i class="ti ti-shopping-bag" style="font-size:15px"></i> PESAN</a>
+          <button class="btn-cart" onclick="addToCart(this, 'Kathrina Irene Indarto Putri', 250000, 'Kathrina JKT48.jpg')"><i class="ti ti-shopping-cart"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="muthe jkt48.jpg" alt="Muthe JKT48">
+      <div class="content">
+        <h2>Mutiara Azzahra Umandana</h2>
+        <p>Muthe JKT48 Generasi 7. 12 07 2004. Kaos dengan desain unik dan menarik bergambar anggota JKT48.</p>
+        <div class="price">Rp250.000</div>
+        <div class="card-actions">
+          <a href="pesan.y-shirt.muthejk48.html" class="btn"><i class="ti ti-shopping-bag" style="font-size:15px"></i> PESAN</a>
+          <button class="btn-cart" onclick="addToCart(this, 'Mutiara Azzahra Umandana', 250000, 'muthe jkt48.jpg')"><i class="ti ti-shopping-cart"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="Ribka JKT48.jpg" alt="Ribka JKT48">
+      <div class="content">
+        <h2>Ribka Budiman</h2>
+        <p>Ribka JKT48 Generasi 12. 13 01 2009. Kaos dengan desain unik dan menarik bergambar anggota JKT48.</p>
+        <div class="price">Rp250.000</div>
+        <div class="card-actions">
+          <a href="pesan.t-shirt.ribkajkt48.html" class="btn"><i class="ti ti-shopping-bag" style="font-size:15px"></i> PESAN</a>
+          <button class="btn-cart" onclick="addToCart(this, 'Ribka Budiman', 250000, 'Ribka JKT48.jpg')"><i class="ti ti-shopping-cart"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="Amanda JKT48.jpg" alt="Amanda JKT48">
+      <div class="content">
+        <h2>Amanda Puspita Sukma</h2>
+        <p>Amanda JKT48 Generasi 10. 17 12 2004. Kaos dengan desain unik dan menarik bergambar anggota JKT48.</p>
+        <div class="price">Rp250.000</div>
+        <div class="card-actions">
+          <a href="pesan.t-shirt.mandajkt48.html" class="btn"><i class="ti ti-shopping-bag" style="font-size:15px"></i> PESAN</a>
+          <button class="btn-cart" onclick="addToCart(this, 'Amanda Puspita Sukma', 250000, 'Amanda JKT48.jpg')"><i class="ti ti-shopping-cart"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="feni JKT48.jpg" alt="Feni JKT48">
+      <div class="content">
+        <h2>Feni Fitriyanti</h2>
+        <p>Feni JKT48 Generasi 3. 16 01 1999. Kaos dengan desain unik dan menarik bergambar anggota JKT48.</p>
+        <div class="price">Rp250.000</div>
+        <div class="card-actions">
+          <a href="pesan.t-shirt.fenijkt48.html" class="btn"><i class="ti ti-shopping-bag" style="font-size:15px"></i> PESAN</a>
+          <button class="btn-cart" onclick="addToCart(this, 'Feni Fitriyanti', 250000, 'feni JKT48.jpg')"><i class="ti ti-shopping-cart"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="olla jkt48.jpg" alt="Olla JKT48">
+      <div class="content">
+        <h2>Febriola Sinambela</h2>
+        <p>Olla JKT48 Generasi 7. 26 02 2005. Kaos dengan desain unik dan menarik bergambar anggota JKT48.</p>
+        <div class="price">Rp250.000</div>
+        <div class="card-actions">
+          <a href="pesan.t-shirt.ollajkt48.html" class="btn"><i class="ti ti-shopping-bag" style="font-size:15px"></i> PESAN</a>
+          <button class="btn-cart" onclick="addToCart(this, 'Febriola Sinambela', 250000, 'olla jkt48.jpg')"><i class="ti ti-shopping-cart"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="jessi jkt48.jpg" alt="Jessi JKT48">
+      <div class="content">
+        <h2>Jessica Chandra</h2>
+        <p>Jessi JKT48 Generasi 7. 23 09 2005. Kaos dengan desain unik dan menarik bergambar anggota JKT48.</p>
+        <div class="price">Rp250.000</div>
+        <div class="card-actions">
+          <a href="pesan.t-shirt.jessijkt48.html" class="btn"><i class="ti ti-shopping-bag" style="font-size:15px"></i> PESAN</a>
+          <button class="btn-cart" onclick="addToCart(this, 'Jessica Chandra', 250000, 'jessi jkt48.jpg')"><i class="ti ti-shopping-cart"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="gita jkt48 (3).jpg" alt="Gita JKT48">
+      <div class="content">
+        <h2>Gita Sekar andarini</h2>
+        <p>GitaJKT48 Generasi 6. 30 06 2001. Kaos dengan desain unik dan menarik bergambar anggota JKT48.</p>
+        <div class="price">Rp250.000</div>
+        <div class="card-actions">
+          <a href="pesan.t-shirt.gitajkt48.html" class="btn"><i class="ti ti-shopping-bag" style="font-size:15px"></i> PESAN</a>
+          <button class="btn-cart" onclick="addToCart(this, 'Gita sekar', 250000, 'Gita jkt48.jpg')"><i class="ti ti-shopping-cart"></i></button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>HILARIO SAHBANI SAPUTRA</p>
+    <p>ALAMAT : MALL FX SUDIRMAN, JAKARTA</p>
+    <p>NOMOR TELPON : 0851-2946-4827</p>
+  </footer>
+
+  <script>
+    let cart = [];
+
+    function formatRp(num) {
+      return 'Rp' + num.toLocaleString('id-ID');
+    }
+
+    function addToCart(btn, name, price, img) {
+      const existing = cart.find(i => i.name === name);
+      if (existing) {
+        existing.qty++;
+      } else {
+        cart.push({ name, price, img, qty: 1 });
+      }
+      btn.classList.add('added');
+      btn.innerHTML = '<i class="ti ti-check"></i>';
+      setTimeout(() => {
+        btn.classList.remove('added');
+        btn.innerHTML = '<i class="ti ti-shopping-cart"></i>';
+      }, 1200);
+      updateCart();
+      showToast(`${name.split(' ')[0]} ditambahkan ke keranjang!`);
+      bumpBadge();
+    }
+
+    function updateCart() {
+      const totalQty = cart.reduce((s, i) => s + i.qty, 0);
+      const totalPrice = cart.reduce((s, i) => s + i.price * i.qty, 0);
+
+      document.getElementById('cartBadge').textContent = totalQty;
+      document.getElementById('totalQty').textContent = totalQty;
+      document.getElementById('subtotalPrice').textContent = formatRp(totalPrice);
+      document.getElementById('totalPrice').textContent = formatRp(totalPrice);
+
+      
+
+      const cartItemsEl = document.getElementById('cartItems');
+      if (cart.length === 0) {
+        cartItemsEl.innerHTML = `<div class="cart-empty"><i class="ti ti-shopping-cart-off"></i><p>Keranjang masih kosong</p></div>`;
+        return;
+      }
+
+      cartItemsEl.innerHTML = cart.map((item, idx) => `
+        <div class="cart-item">
+          <img src="${item.img}" alt="${item.name}" onerror="this.style.background='#eee'">
+          <div class="cart-item-info">
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-price">${formatRp(item.price)}</div>
+            <div class="cart-item-controls">
+              <button class="qty-btn" onclick="changeQty(${idx}, -1)">−</button>
+              <span class="qty-display">${item.qty}</span>
+              <button class="qty-btn" onclick="changeQty(${idx}, 1)">+</button>
+            </div>
+          </div>
+          <button class="remove-btn" onclick="removeItem(${idx})"><i class="ti ti-trash"></i></button>
+        </div>
+      `).join('');
+    }
+
+   
+
+    let toastTimer;
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    function bumpBadge() {
+      const badge = document.getElementById('cartBadge');
+      badge.classList.add('bump');
+      setTimeout(() => badge.classList.remove('bump'), 300);
+    }
+
+
+    updateCart();
+  </script>
+
+</body>
+</html>

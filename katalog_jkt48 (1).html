@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Katalog Birthday T-Shirt JKT48</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      color: #333;
+    }
+
+    /* ===== HEADER 1: MERCHANDISE (dengan gambar banner) ===== */
+    .header-merchandise {
+      position: relative;
+      background: #cc0000;
+      color: white;
+      text-align: center;
+      padding: 0;
+      overflow: hidden;
+      height: 280px;
+    }
+
+    .header-merchandise .banner-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      opacity: 0.45;
+    }
+
+    .header-merchandise .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .header-merchandise .overlay-text h1 {
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      text-shadow: 2px 3px 8px rgba(0,0,0,0.7);
+      margin-bottom: 8px;
+    }
+
+    .header-merchandise .overlay-text p {
+      font-size: 18px;
+      letter-spacing: 2px;
+      text-shadow: 1px 2px 5px rgba(0,0,0,0.6);
+    }
+
+    /* ===== HEADER 2: T-SHIRT ===== */
+    .header-tshirt {
+      background: red;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .header-tshirt h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .header-tshirt p {
+      font-size: 18px;
+    }
+
+    /* ===== GRID PRODUK ===== */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .content h2 {
+      color: #0078D7;
+      margin-bottom: 10px;
+    }
+
+    .content p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      color: green;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      background: red;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: darkred;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER 1: dengan banner gambar ===== -->
+  <header class="header-merchandise">
+    <!--
+      Ganti src di bawah dengan path gambar lokal kamu, contoh:
+      src="banner_jkt48.jpg"
+      Saat ini menggunakan gambar placeholder dari internet.
+    -->
+    <img
+      class="banner-img"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/JKT48_logo.svg/1200px-JKT48_logo.svg.png"
+      alt="JKT48 Banner"
+    />
+    <div class="overlay-text">
+      <h1>JKT48 MERCHANDISE</h1>
+      <p>Official Birthday Collection</p>
+    </div>
+  </header>
+
+  <!-- ===== HEADER 2: T-SHIRT ===== -->
+  <header class="header-tshirt">
+    <h1>JKT48 T-SHIRT</h1>
+    <p>JKT48 BIRTHDAY T-SHIRT</p>
+  </header>
+
+  <!-- ===== PRODUK ===== -->
+  <section class="container">
+
+    <!-- Produk 1 -->
+    <div class="card">
+      <img src="reva jkt48.jpg" alt="Adel JKT48">
+      <div class="content">
+        <h2>Reva Fidela Adel Pantjoro</h2>
+        <p>Adel JKT48 Generasi 8. Lahir pada 14 Juli 2006.</p>
+        <div class="price">Rp250.000</div>
+        <a href="pesan.t-shirt.adeljkt48.html" class="btn">PESAN</a>
+      </div>
+    </div>
+
+    <!-- Produk 2 -->
+    <div class="card">
+      <img src="Kathrina JKT48.jpg" alt="Kathrina JKT48">
+      <div class="content">
+        <h2>Kathrina Irene Indarto Putri</h2>
+        <p>Kathrina JKT48 generasi 9. 26 07 2006.</p>
+        <div class="price">Rp250.000</div>
+        <a href="pesan.t-shirt.atinjkt48.html" class="btn">PESAN</a>
+      </div>
+    </div>
+
+    <!-- Produk 3 -->
+    <div class="card">
+      <img src="muthe jkt48.jpg" alt="Muthe JKT48">
+      <div class="content">
+        <h2>Mutiara Azzahra Umandana</h2>
+        <p>Muthe JKT48 generasi 7. 12 07 2004.</p>
+        <div class="price">Rp250.000</div>
+        <a href="pesan.y-shirt.muthejk48.html" class="btn">PESAN</a>
+      </div>
+    </div>
+
+    <!-- Produk 4 -->
+    <div class="card">
+      <img src="Ribka JKT48.jpg" alt="Ribka JKT48">
+      <div class="content">
+        <h2>Ribka Budiman</h2>
+        <p>Ribka JKT48 generasi 12. 13 01 2009.</p>
+        <div class="price">Rp250.000</div>
+        <a href="pesan.t-shirt.ribkajkt48.html" class="btn">PESAN</a>
+      </div>
+    </div>
+
+    <!-- Produk 5 -->
+    <div class="card">
+      <img src="Amanda JKT48.jpg" alt="Amanda JKT48">
+      <div class="content">
+        <h2>Amanda Puspita Sukma</h2>
+        <p>Amanda JKT48 generasi 10. 17 12 2004.</p>
+        <div class="price">Rp250.000</div>
+        <a href="pesan.t-shirt.mandajkt48.html" class="btn">PESAN</a>
+      </div>
+    </div>
+
+    <!-- Produk 6 -->
+    <div class="card">
+      <img src="feni JKT48.jpg" alt="Feni JKT48">
+      <div class="content">
+        <h2>Feni Fitriyanti</h2>
+        <p>Feni JKT48 generasi 3. 16 01 1999.</p>
+        <div class="price">Rp250.000</div>
+        <a href="pesan.t-shirt.fenijkt48.html" class="btn">PESAN</a>
+      </div>
+    </div>
+
+    <!-- Produk 7 -->
+    <div class="card">
+      <img src="olla jkt48.jpg" alt="Olla JKT48">
+      <div class="content">
+        <h2>Febriola Sinambela</h2>
+        <p>Olla JKT48 generasi 7. 26 02 2005.</p>
+        <div class="price">Rp250.000</div>
+        <a href="pesan.t-shirt.ollajkt48.html" class="btn">PESAN</a>
+      </div>
+    </div>
+
+    <!-- Produk 8 -->
+    <div class="card">
+      <img src="jessi jkt48.jpg" alt="Jessi JKT48">
+      <div class="content">
+        <h2>Jessica Chandra</h2>
+        <p>Jessi JKT48 generasi 7. 23 09 2005.</p>
+        <div class="price">Rp250.000</div>
+        <a href="pesan.t-shirt.jessijkt48.html" class="btn">PESAN</a>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>HILARIO SAHBANI SAPUTRA</p>
+    <p>ALAMAT       : MALL FX SUDIRMAN, JAKARTA</p>
+    <p>NOMOR TELPON : 0851-2946-4827</p>
+  </footer>
+
+</body>
+</html>
